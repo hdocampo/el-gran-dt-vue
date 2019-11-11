@@ -1,8 +1,6 @@
 <template>
   <div id="app" class="container">
-    <header-app 
-      :link-list="routes"
-    />
+    <header-app />
     <div class="content">
       <router-view></router-view>
     </div>

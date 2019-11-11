@@ -1,16 +1,6 @@
 <template>
   <div>
-    <b-jumbotron>
-      <template slot="header">{{ title }}</template>
-
-      <template slot="lead">
-        {{ lead }}
-      </template>
-
-      <hr class="my-4" />
-
-      <b-button :variant="button.class" :href="button.url"> {{ button.text }} </b-button>
-    </b-jumbotron>
+    
   </div>
 </template>
 
