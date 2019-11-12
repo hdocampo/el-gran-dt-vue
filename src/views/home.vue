@@ -9,7 +9,7 @@
       />
       
       <player-list-selected
-        :selected="playersSelected"
+        :selected="playersList"
       />
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
     return {
       message: "A armar el cuadro!",
       api: api,
-      playersSelected: []
+      playersList: []
     };
   },
   components: {
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     playerSelected(player) {
-      console.log('Arriving to parent Component (Home)', player);
+      this.playersList.push(player);
     }
   }
 };

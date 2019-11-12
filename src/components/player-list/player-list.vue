@@ -1,7 +1,7 @@
 <template>
   <div class="product-list">
+    <h3>Disponibles</h3>
     <ul v-if="dataPlayers">
-      <h3>Disponibles</h3>
       <player-item
         v-for="player in dataPlayers"
         :player="player"

@@ -5,11 +5,11 @@
     @click="addPlayer(playerData)"
   >
     <div class="player-list-item__container">
-      <div class="player-list-item__name">{{ playerData.namePlayer }}</div>
-      <div class="player-list-item__position">{{ playerData.positionPlayer }}</div>
-      <div class="player-list-item__price">{{ playerData.pricePlayer }}</div>
-      <div class="player-list-item__picture">{{ playerData.picPlayer }}</div>
-      <div class="player-list-item__country">{{ playerData.countryPlayer }}</div>
+      <div class="player-list-item__name">{{ playerData.name }}</div>
+      <div class="player-list-item__position">{{ playerData.position }}</div>
+      <div class="player-list-item__price">{{ playerData.price }}</div>
+      <div class="player-list-item__picture">{{ playerData.pic }}</div>
+      <div class="player-list-item__country">{{ playerData.countryId }}</div>
     </div>
   </li>
 </template>
@@ -19,21 +19,24 @@ export default {
     return {
       playerData: {
         idPlayer: this.player.id,
-        namePlayer: this.player.name,
-        positionPlayer: this.player.position,
-        pricePlayer: this.player.price,
+        name: this.player.name,
+        position: this.player.position,
+        price: this.player.price,
         marketStatus: this.player.market,
-        picPlayer: this.player.pic,
-        countryPlayer: this.player.countryId
+        pic: this.player.pic,
+        countryId: this.player.countryId
       }
     };
   },
   mounted() {
+    // console.log(this.playerData)
+  },
+  updated() {
+    console.log('updated')
   },
   methods: {
     addPlayer(player) {
       this.$emit("playerSelected", player);
-      console.log('EMITTING from Child Component (Player List Item)', player);
     }
   },
   props: {
