@@ -4,13 +4,9 @@
       <h3>Disponibles</h3>
       <player-item
         v-for="player in dataPlayers"
+        :player="player"
         :key="player.id"
-        :name="player.name"
-        :position="player.position"
-        :price="player.price"
-        :market="player.inMarket"
-        :pic="player.pic"
-        :country="player.countryId"
+        @playerSelected="playerSelected"
       />
     </ul>
   </div>
@@ -27,8 +23,14 @@ export default {
   components: {
     playerItem
   },
+  methods: {
+    playerSelected(player) {
+      console.log('SCALING for middle component (team list)', player);
+      this.$emit("playerSelected", player);
+    }
+  },
   mounted() {
-    console.log(this.data.api);
+    console.log('Vue Instance mounted!!');
   },
   props: {
     data: Object

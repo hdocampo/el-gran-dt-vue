@@ -4,6 +4,9 @@
       <p>No hay jugadores seleccionados</p>
       <div>Selecciona del panel izquierdo!</div>
     </div>
+    <div v-if="playersSelected.length">
+      <p>Agregando jugadores</p>
+    </div>
   </div>
 </template>
 

@@ -4,7 +4,8 @@
 
     <div class="home__container">
       <player-list 
-        :data="{api}" 
+        :data="{api}"
+        @playerSelected="playerSelected"
       />
       
       <player-list-selected
@@ -31,6 +32,11 @@ export default {
   components: {
     playerList,
     playerListSelected
+  },
+  methods: {
+    playerSelected(player) {
+      console.log('Arriving to parent Component (Home)', player);
+    }
   }
 };
 </script>

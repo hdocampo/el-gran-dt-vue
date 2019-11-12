@@ -4,6 +4,7 @@
   "description": "El Gran Deté",
   "main": "index.js",
   "scripts": {
+    "start": "npm run serve",
     "serve": "webpack-dev-server --mode development",
     "clean": "rimraf dist",
     "build": "npm run clean && webpack --mode production"
@@ -16,7 +17,7 @@
     "vue",
     "spa"
   ],
-  "author": "Hugo Ocampo <hdocampo@gmail.com>",
+  "author": "Hugo Ocampo <hugo.ocampo@endava.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hdocampo/el-gran-dt-vue/issues"
