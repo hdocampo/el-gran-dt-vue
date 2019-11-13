@@ -4,7 +4,7 @@
 
     <div class="home__container">
       <player-list 
-        :data="{api}"
+        :playersDraft="playersDraft"
         @playerSelected="playerSelected"
       />
       
@@ -25,9 +25,11 @@ export default {
   data() {
     return {
       message: "A armar el cuadro!",
-      api: api,
+      playersDraft: api.players,
       playersList: []
     };
+  },
+  mounted(){
   },
   components: {
     playerList,
@@ -36,6 +38,9 @@ export default {
   methods: {
     playerSelected(player) {
       this.playersList.push(player);
+      this.playersDraft = this.playersDraft.filter(playerRoster => {
+        return player.idPlayer != playerRoster.id
+      })
     }
   }
 };

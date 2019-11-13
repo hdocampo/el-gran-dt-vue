@@ -3,7 +3,7 @@
     <h3>Disponibles</h3>
     <ul v-if="dataPlayers">
       <player-item
-        v-for="player in dataPlayers"
+        v-for="player in updatedPlayers"
         :player="player"
         :key="player.id"
         @playerSelected="playerSelected"
@@ -17,23 +17,28 @@ import playerItem from "../player-list-item/player-list-item.vue";
 export default {
   data() {
     return {
-      dataPlayers: this.data.api.players
+      dataPlayers: this.playersDraft
     };
+  },
+  mounted() {
+    console.log("Vue Instance mounted!!");
+  },
+  computed: {
+    updatedPlayers: function() {
+      return this.playersDraft;
+    }
   },
   components: {
     playerItem
   },
   methods: {
     playerSelected(player) {
-      console.log('SCALING for middle component (team list)', player);
+      console.log("SCALING for middle component (team list)", player);
       this.$emit("playerSelected", player);
     }
   },
-  mounted() {
-    console.log('Vue Instance mounted!!');
-  },
   props: {
-    data: Object
+    playersDraft: Array
   }
 };
 </script>
