@@ -8,6 +8,14 @@
         @playerSelected="playerSelected"
       />
       
+      <slot v-if="!currentPlayer">
+        <p>Selecciona un jugador para ver su ficha</p>
+      </slot>
+      
+      <slot v-if="currentPlayer">
+        <!-- <player-item-data /> -->
+      </slot>
+      
       <player-list-selected
         :selected="playersList"
       />
@@ -19,6 +27,7 @@
 // we can name the module as we want!
 import playerList from "../components/player-list/player-list.vue";
 import playerListSelected from "../components/player-list-selected/player-list-selected.vue";
+import playerItemData from "../components/player-list-item-data/player-list-item-data.vue";
 import { api } from '../constants/api';
 
 export default {
@@ -26,21 +35,24 @@ export default {
     return {
       message: "Juguemos al Troesma",
       playersDraft: api.players,
-      playersList: []
+      playersList: [],
+      currentPlayer: null
     };
   },
   mounted(){
   },
   components: {
     playerList,
-    playerListSelected
+    playerListSelected,
+    playerItemData
   },
   methods: {
     playerSelected(player) {
-      this.playersList.push(player);
-      this.playersDraft = this.playersDraft.filter(playerRoster => {
-        return player.id != playerRoster.id
-      })
+      // this.playersList.push(player);
+      // this.playersDraft = this.playersDraft.filter(playerRoster => {
+      //   return player.id != playerRoster.id
+      // })
+      this.currentPlayer = player;
     }
   }
 };
