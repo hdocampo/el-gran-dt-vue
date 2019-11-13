@@ -39,7 +39,7 @@ export default {
     playerSelected(player) {
       this.playersList.push(player);
       this.playersDraft = this.playersDraft.filter(playerRoster => {
-        return player.idPlayer != playerRoster.id
+        return player.id != playerRoster.id
       })
     }
   }

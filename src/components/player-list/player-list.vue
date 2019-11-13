@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     playerSelected(player) {
-      console.log("SCALING for middle component (team list)", player);
       this.$emit("playerSelected", player);
     }
   },
