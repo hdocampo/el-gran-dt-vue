@@ -24,7 +24,7 @@ import { api } from '../constants/api';
 export default {
   data() {
     return {
-      message: "A armar el cuadro!",
+      message: "Juguemos al Troesma",
       playersDraft: api.players,
       playersList: []
     };

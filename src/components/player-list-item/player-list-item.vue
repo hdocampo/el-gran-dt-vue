@@ -6,16 +6,25 @@
   >
     <div class="player-list-item__container">
       <div class="player-list-item__picture">
-        <img 
-          :src="playerImg"
-          :alt="currentPlayer.name"
-        />
+        <img :src="playerImg" :alt="currentPlayer.name" class="player-list-item__image" />
       </div>
       <div class="player-list-item__info">
-        <div class="player-list-item__name">{{ currentPlayer.name }}</div>
-        <div class="player-list-item__position">{{ currentPlayer.position }}</div>
-        <div class="player-list-item__price">{{ currentPlayer.price }}</div>
-        <div class="player-list-item__country">{{ currentPlayer.countryId }}</div>
+        <div class="player-list-item__name">
+          <font-awesome-icon icon="id-card" />
+          {{ currentPlayer.name }}
+        </div>
+        <div class="player-list-item__position">
+          <font-awesome-icon icon="futbol" />
+          {{ playerPositions }}
+        </div>
+        <div class="player-list-item__price">
+          <font-awesome-icon icon="coins" />
+          {{ currentPlayer.price }}
+        </div>
+        <div class="player-list-item__country">
+          <font-awesome-icon icon="flag" />
+          {{ currentPlayer.countryId }}
+        </div>
       </div>
     </div>
   </li>
@@ -24,7 +33,7 @@
 export default {
   data() {
     return {
-      playerImg: require('../../assets/images/' + this.player.pic)
+      playerImg: require("../../assets/images/" + this.player.pic)
     };
   },
   mounted() {
@@ -38,6 +47,9 @@ export default {
   computed: {
     currentPlayer: function() {
       return this.player;
+    },
+    playerPositions: function() {
+      return this.currentPlayer.position.join(", ");
     }
   },
   props: {

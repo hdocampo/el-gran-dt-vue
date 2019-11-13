@@ -1,12 +1,11 @@
 <template>
   <div class="player-list-selected">
     <h3>Elegidos</h3>
-    <div v-if="!playersSelected.length">
+    <div v-if="!selectedPlayer">
       <p>No hay jugadores seleccionados</p>
       <div>Selecciona del panel izquierdo!</div>
     </div>
-    <div v-if="playersSelected.length">
-      <p>Agregando jugadores</p>
+    <div v-if="selectedPlayer">
       <ul>
         <player-item 
           v-for="player in playersSelected" 
@@ -32,6 +31,11 @@ export default {
   },
   props: {
     selected: Array
+  },
+  computed: {
+    selectedPlayer: function() {
+      return this.playersSelected.length;
+    }
   }
 };
 </script>

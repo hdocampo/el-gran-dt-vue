@@ -1,5 +1,8 @@
 <template>
   <div class="players">
+    <!-- <b-spinner 
+        v-if="loading"
+        label="Loading..."></b-spinner> -->
     <h3>Disponibles</h3>
     <ul v-if="dataPlayers"
       class="players__list"
@@ -20,7 +23,8 @@ import playerItem from "../player-list-item/player-list-item.vue";
 export default {
   data() {
     return {
-      dataPlayers: this.playersDraft
+      dataPlayers: this.playersDraft,
+      loading: true
     };
   },
   mounted() {
