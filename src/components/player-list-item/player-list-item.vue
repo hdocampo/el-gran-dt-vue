@@ -5,11 +5,18 @@
     @click="addPlayer(currentPlayer)"
   >
     <div class="player-list-item__container">
-      <div class="player-list-item__name">{{ currentPlayer.name }}</div>
-      <div class="player-list-item__position">{{ currentPlayer.position }}</div>
-      <div class="player-list-item__price">{{ currentPlayer.price }}</div>
-      <div class="player-list-item__picture">{{ currentPlayer.pic }}</div>
-      <div class="player-list-item__country">{{ currentPlayer.countryId }}</div>
+      <div class="player-list-item__picture">
+        <img 
+          :src="playerImg"
+          :alt="currentPlayer.name"
+        />
+      </div>
+      <div class="player-list-item__info">
+        <div class="player-list-item__name">{{ currentPlayer.name }}</div>
+        <div class="player-list-item__position">{{ currentPlayer.position }}</div>
+        <div class="player-list-item__price">{{ currentPlayer.price }}</div>
+        <div class="player-list-item__country">{{ currentPlayer.countryId }}</div>
+      </div>
     </div>
   </li>
 </template>
@@ -17,8 +24,8 @@
 export default {
   data() {
     return {
-
-    }
+      playerImg: require('../../assets/images/' + this.player.pic)
+    };
   },
   mounted() {
     console.log("Mounted player list item");
@@ -47,6 +54,6 @@ export default {
   }
 };
 </script>
-<style>
-@import url("./player-list-item.css");
+<style lang="scss" scoped>
+@import "./player-list-item.scss";
 </style>

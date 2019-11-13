@@ -1,12 +1,15 @@
 <template>
-  <div class="product-list">
+  <div class="players">
     <h3>Disponibles</h3>
-    <ul v-if="dataPlayers">
+    <ul v-if="dataPlayers"
+      class="players__list"
+    >
       <player-item
         v-for="player in updatedPlayers"
         :player="player"
         :key="player.id"
         @playerSelected="playerSelected"
+        class="players__list-item"
       />
     </ul>
   </div>
@@ -41,6 +44,6 @@ export default {
   }
 };
 </script>
-<style>
-@import url("./player-list.css");
+<style lang="scss" scoped>
+  @import './player-list.scss'
 </style>

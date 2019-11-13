@@ -11,7 +11,7 @@
 </template>
 
 <script src="./header.js"></script>
-<style>
-  @import url('./header.css');
+<style lang="scss" scoped>
+  @import './header.scss'
 </style>
 

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import './variables.scss';
+
+body {
+  font-family: $standard_font;
+  font-weight: $standard_font_weight;
+}
+
+a {
+  color: $dark-orange;
+  font-weight: bold;
+}

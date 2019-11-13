@@ -1,0 +1,10 @@
+.players {
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        background: red;
+    }
+}

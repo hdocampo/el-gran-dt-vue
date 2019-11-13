@@ -1,0 +1,11 @@
+@mixin resetListStyle {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+@mixin removeShadow {
+  box-shadow: none;
+}
