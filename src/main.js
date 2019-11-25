@@ -1,37 +1,21 @@
 import Vue from 'vue';
-import router from './router/'
 import App from './App.vue';
-import BootstrapVue from 'bootstrap-vue'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faCoins,
-  faIdCard,
-  faFutbol,
-  faFlag
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-const iconsFA = [
-  faFutbol,
-  faIdCard,
-  faCoins,
-  faFlag
-]
-
-library.add(iconsFA);
-
-// bootstrap.js
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.use(BootstrapVue);
-
-new Vue({
+let vueInstance = new Vue({
   el: '#app',
-  router,
-  render: h => h(App),
-  mounted: function() {
-    console.log('Vue Router loaded successfully');
-  }
+  data() {
+    return {
+      companyName: 'Endava',
+      isDevWeek: true,
+      talkList: [],
+    };
+  },
+  template: `
+    <div class="checkbox-wrapper">
+      <h1>{{ companyName }}</h1>
+      <h2>¿Estamos en Dev Week? {{ isDevWeek }}</h2>
+      <p>La lista de eventos es {{ talkList.length }}</p>
+    </div>`
 });
+
+vueInstance.$mount();
