@@ -23,28 +23,41 @@ let vueInstance = new Vue({
     backToThePast() {
       this.companyName = 'Velocity Partners';
     },
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      return this.companyName = this.companyName.split('').reverse().join('');
+    },
+  },
+  computed: {
+    getCompanyName: function () {
+      // `this` points to the vm instance
+      return this.companyName;
+    },
     getAppStyles() {
       return {
+        title: 'cursor: pointer',
         wrapper: 'height: 100%; display: flex; align-items: center;',
         content: 'width: 90%; height: 50vh; background: #efefef; padding: 15px;',
-        content_inner: 'display: flex; flex-direction: column; justify-content: space-around;'
+        content_inner: 'display: flex; flex-direction: column; justify-content: space-around;',
+        event_list: 'font-size: 150%; font-weight: bold'
       }
-    }
+    },
   },
   template: `
     <div class="app__wrapper container text-center" 
-      :style="getAppStyles().wrapper">
+      :style="getAppStyles.wrapper">
 
       <div class="app__content row" 
-        :style="getAppStyles().content">
+        :style="getAppStyles.content">
         
         <div class="col-lg-12" 
-          :style="getAppStyles().content_inner">
+          :style="getAppStyles.content_inner">
 
-          <h1>{{ companyName }}</h1>
+          <h1 :style="getAppStyles.title"
+            @click="reversedMessage()">{{ getCompanyName }}</h1>
           <h2>¿Estamos en Dev Week? {{ isDevWeek }}</h2>
           <p class="app__event-list"
-            style="font-size: 150%; font-weight: bold"
+            :style="getAppStyles.event_list"
           >La lista de eventos es {{ talkList.length }}</p>
           
           <div class="app__buttons-container">
