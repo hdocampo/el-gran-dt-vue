@@ -14,19 +14,24 @@ let vueInstance = new Vue({
       companyName: 'Endava',
       isDevWeek: true,
       talkList: [],
+      newEvent: ''
     };
   },
   methods: {
-    increaseEvents() {
-      this.talkList.push(['Charla de Vue']);
-    },
     backToThePast() {
       this.companyName = 'Velocity Partners';
+    },
+    backToThePresent() {
+      this.companyName = 'Endava';
     },
     reversedMessage: function () {
       // `this` points to the vm instance
       return this.companyName = this.companyName.split('').reverse().join('');
     },
+    addNewEvent() {
+      this.talkList.push(this.newEvent);
+      this.newEvent = '';
+    }
   },
   computed: {
     getCompanyName: function () {
@@ -54,22 +59,39 @@ let vueInstance = new Vue({
           :style="getAppStyles.content_inner">
 
           <h1 :style="getAppStyles.title"
-            @click="reversedMessage()">{{ getCompanyName }}</h1>
-          <h2>¿Estamos en Dev Week? {{ isDevWeek }}</h2>
+            @click="reversedMessage">{{ getCompanyName }}</h1>
+          <h2>¿Estamos en Dev Week? {{ isDevWeek ? 'Sí claro' : 'No!' }}</h2>
           <p class="app__event-list"
             :style="getAppStyles.event_list"
           >La lista de eventos es {{ talkList.length }}</p>
+
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3 p-3">
+              <input class="form-control col-lg-8 float-left" 
+                placeholder="Agregate un evento!"
+                type="text=" v-model="newEvent" />
+              <button
+                type="button"
+                class="btn btn-primary col-lg-3 float-right"
+                @click="addNewEvent"
+              >Agregar</button>
+              <div class="clearfix"></div>
+              <p class="col-lg-12 p-3">{{ newEvent }}</p>
+            </div>
+          </div>
           
           <div class="app__buttons-container">
             <button
               type="button"
-              class="btn btn-success"
-              @click="increaseEvents"
-            >Aumentar eventos</button>
-            <button
-              type="button"
               class="btn btn-danger"
               @click="backToThePast"
+              :disabled="companyName === 'Velocity Partners'"
+            >Volver al pasado</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="backToThePresent"
+              :disabled="companyName === 'Endava'"
             >Volver al pasado</button>
           </div>
 
