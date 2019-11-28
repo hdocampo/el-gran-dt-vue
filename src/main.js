@@ -4,6 +4,7 @@ import BootstrapVue from 'bootstrap-vue'
 // bootstrap.js
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import TestComponent from './components/test-component.vue';
 
 Vue.use(BootstrapVue);
 
@@ -16,6 +17,9 @@ let vueInstance = new Vue({
       talkList: [],
       newEvent: ''
     };
+  },
+  components: {
+    TestComponent
   },
   methods: {
     backToThePast() {
@@ -94,6 +98,8 @@ let vueInstance = new Vue({
               :disabled="companyName === 'Endava'"
             >Volver al pasado</button>
           </div>
+
+          <test-component />
 
         </div>
       </div>
