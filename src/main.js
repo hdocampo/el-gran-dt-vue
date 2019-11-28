@@ -7,7 +7,8 @@ import {
   faCoins,
   faIdCard,
   faFutbol,
-  faFlag
+  faFlag,
+  faChevronCircleRight
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -15,7 +16,8 @@ const iconsFA = [
   faFutbol,
   faIdCard,
   faCoins,
-  faFlag
+  faFlag,
+  faChevronCircleRight
 ]
 
 library.add(iconsFA);

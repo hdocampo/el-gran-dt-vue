@@ -1,12 +1,14 @@
 @import "../../assets/scss/styles.scss";
 
-.player-list-item {
-    background: $light-blue;
-    padding: $default_padding;
-    cursor: pointer;
-    border-bottom: 1px solid $blue;
-
+.player-list-item-data {
     &__container {
+        background: $medium-gray;
+        border-radius: $border-radius;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    &__card {
         display: flex;
     }
 
@@ -14,8 +16,16 @@
         flex-basis: 15%;
     }
 
+    &__pos-price {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__info {
-        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: $default_padding;
+        margin-left: 10px;
     }
 
     &__image {

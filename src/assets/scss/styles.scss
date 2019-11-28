@@ -1,18 +1,41 @@
-@charset "UTF-8";
+@import './fonts.scss';
 
-@import './variables.scss';
+// colors
+$black: #000000;
+$dark-gray: #666666;
+$medium-gray: #c4c4c4;
+$light-gray: #ebebeb;
+$white: #ffffff;
+$dark-blue: #005680;
+$blue: #007bb8;
+$light-blue: #d5f1ff;
+$dark-orange: #de411b;
+$orange: #ff5811;
+$light-orange: #ffd8b5;
+$indigo: #4D6EC6;
+$rust: #AF2E0F;
+$endava-gray: #64666D;
 
-body {
-  font-family: $standard_font;
-  font-weight: $standard_font_weight;
+// fonts
+$roboto: 'Roboto', sans-serif;
+$roboto-bold: 'Roboto-Bold', sans-serif;
+$roboto-condensed: 'Roboto-Condensed', sans-serif;
+$roboto-condensed-bold: 'Roboto-Condensed-Bold', sans-serif;
+
+$standard_font: $roboto;
+$standard_font_weight: 400;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $roboto-condensed-bold;
+    text-transform: uppercase;
 }
 
-a {
-  color: $dark-orange;
-  font-weight: bold;
-}
+// borders
+$border-radius: 15px;
 
-ul, li {
-  list-style: none;
-  margin: 0;
-}
+$default-padding: 15px;

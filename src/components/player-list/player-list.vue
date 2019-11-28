@@ -6,6 +6,7 @@
     <h3>Disponibles</h3>
     <ul v-if="dataPlayers"
       class="players__list"
+      :class="{selected: isSelectedPlayers}"
     >
       <player-item
         v-for="player in updatedPlayers"
@@ -30,13 +31,13 @@ export default {
   mounted() {
     console.log("Vue Instance mounted!!");
   },
+  components: {
+    playerItem
+  },
   computed: {
     updatedPlayers: function() {
       return this.playersDraft;
     }
-  },
-  components: {
-    playerItem
   },
   methods: {
     playerSelected(player) {
@@ -44,7 +45,8 @@ export default {
     }
   },
   props: {
-    playersDraft: Array
+    playersDraft: Array,
+    isSelectedPlayers: Boolean
   }
 };
 </script>

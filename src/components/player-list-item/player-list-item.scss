@@ -1,17 +1,23 @@
 @import "../../assets/scss/styles.scss";
 
 .player-list-item {
-    background: $light-blue;
+    color: $white;
     padding: $default_padding;
     cursor: pointer;
     border-bottom: 1px solid $blue;
-
+    
     &__container {
         display: flex;
+        align-items: center;
     }
 
     &__picture {
-        flex-basis: 15%;
+        border-radius: 40px;
+        overflow: hidden;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        border: 0.2em solid $medium-gray;
     }
 
     &__info {

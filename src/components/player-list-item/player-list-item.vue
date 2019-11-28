@@ -1,30 +1,28 @@
 <template>
   <li
     class="player-list-item"
-    :class="{sold: currentPlayer.market}"
     @click="addPlayer(currentPlayer)"
   >
     <div class="player-list-item__container">
+      <div class="player-list-item__position">
+        <font-awesome-icon icon="futbol" />
+        {{ playerPositions }}
+      </div>        
       <div class="player-list-item__picture">
         <img :src="playerImg" :alt="currentPlayer.name" class="player-list-item__image" />
+      </div>        
+      <div class="player-list-item__name">
+        <font-awesome-icon icon="id-card" />
+        {{ currentPlayer.name }}
       </div>
-      <div class="player-list-item__info">
-        <div class="player-list-item__name">
-          <font-awesome-icon icon="id-card" />
-          {{ currentPlayer.name }}
-        </div>
-        <div class="player-list-item__position">
-          <font-awesome-icon icon="futbol" />
-          {{ playerPositions }}
-        </div>
-        <div class="player-list-item__price">
-          <font-awesome-icon icon="coins" />
-          {{ currentPlayer.price }}
-        </div>
-        <div class="player-list-item__country">
-          <font-awesome-icon icon="flag" />
-          {{ currentPlayer.countryId }}
-        </div>
+      <div class="player-list-item__price">
+        <font-awesome-icon icon="coins" />
+        {{ currentPlayer.price }}
+      </div>
+      <!-- <div class="player-list-item__country">
+        <font-awesome-icon icon="flag" />
+        {{ currentPlayer.countryId }}
+      </div> -->
       </div>
     </div>
   </li>
