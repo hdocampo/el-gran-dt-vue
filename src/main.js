@@ -4,19 +4,13 @@ import App from './App.vue';
 import BootstrapVue from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faCoins,
-  faIdCard,
-  faFutbol,
-  faFlag,
+  faChartBar,
   faChevronCircleRight
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const iconsFA = [
-  faFutbol,
-  faIdCard,
-  faCoins,
-  faFlag,
+  faChartBar,
   faChevronCircleRight
 ]
 

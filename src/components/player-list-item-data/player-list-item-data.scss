@@ -1,11 +1,49 @@
 @import "../../assets/scss/styles.scss";
 
 .player-list-item-data {
+
     &__container {
+        font-family: $standard_font;
         background: $medium-gray;
+        margin-top: 41px;
         border-radius: $border-radius;
         overflow: hidden;
         height: 100%;
+        flex-basis: 35%;
+    }
+
+    &__icon {
+        color: $dark-orange;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button,
+    &__title,
+    &__container {
+        color: $white;
+    }
+
+    &__add {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    &__button {
+        background: $dark-orange;
+        padding: $button-padding;
+        border: none;
+        border-radius: $border-radius;
+        width: 40%;
+        line-height: 1em;
+
+        &--disabled {
+            opacity: 0.5;
+        }
     }
 
     &__card {
@@ -14,6 +52,10 @@
 
     &__picture {
         flex-basis: 15%;
+        min-width: 130px;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
     }
 
     &__pos-price {
@@ -26,6 +68,8 @@
         flex-direction: column;
         padding: $default_padding;
         margin-left: 10px;
+        width: 100%;
+        justify-content: space-between;
     }
 
     &__image {
@@ -33,6 +77,6 @@
     }
 
     &__name {
-        font-size: 1.4em;
+        font-size: 24px;
     }
 }

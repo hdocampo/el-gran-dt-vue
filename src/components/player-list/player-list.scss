@@ -1,8 +1,11 @@
 @import "../../assets/scss/styles.scss";
 
 .players {
-    display: flex;
-    flex-direction: column;
+    &__selected, &__draft {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 25%;
+    }
 
     &__list {
         margin: 0;
@@ -10,7 +13,7 @@
         background: $endava-gray;
         border-radius: $border-radius;
 
-        &.selected {
+        &-selected {
             background: $dark-orange;
         }
     }

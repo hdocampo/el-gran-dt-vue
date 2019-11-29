@@ -1,5 +1,5 @@
 <template>
-  <div class="players">
+  <div class="players__draft">
     <!-- <b-spinner 
         v-if="loading"
         label="Loading..."></b-spinner> -->

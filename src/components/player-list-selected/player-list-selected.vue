@@ -1,17 +1,20 @@
 <template>
-  <div class="player-list-selected">
+  <div class="players__selected">
     <h3>Elegidos</h3>
-    <div v-if="!selectedPlayer">
+    <div v-show="!playersSelected">
       <p>No hay jugadores seleccionados</p>
       <div>Selecciona del panel izquierdo!</div>
     </div>
-    <div v-if="selectedPlayer">
-      <ul>
-        <player-item 
-          v-for="player in playersSelected" 
-          :player="player" 
-          :key="player.id"
-        />
+    <div v-show="playersSelected">
+        <ul
+          class="players__list"
+          :class="{'players__list-selected': playersSelected}"
+        >
+          <player-item 
+            v-for="player in playersSelected" 
+            :player="player" 
+            :key="player.id"
+          />
       </ul>
     </div>
   </div>
@@ -41,4 +44,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import './../player-list/player-list.scss'
 </style>

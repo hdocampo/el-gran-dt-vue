@@ -15,14 +15,9 @@ $light-orange: #ffd8b5;
 $indigo: #4D6EC6;
 $rust: #AF2E0F;
 $endava-gray: #64666D;
+$endava-title: #AAAAAA;
 
-// fonts
-$roboto: 'Roboto', sans-serif;
-$roboto-bold: 'Roboto-Bold', sans-serif;
-$roboto-condensed: 'Roboto-Condensed', sans-serif;
-$roboto-condensed-bold: 'Roboto-Condensed-Bold', sans-serif;
-
-$standard_font: $roboto;
+$standard_font: 'Poppins', sans-serif;
 $standard_font_weight: 400;
 
 h1,
@@ -30,12 +25,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: $roboto-condensed-bold;
+h6,
+label {
+    font-family: $standard_font;
+    font-weight: 700;
     text-transform: uppercase;
+    color: $endava-title;
 }
 
 // borders
 $border-radius: 15px;
-
 $default-padding: 15px;
+$button-padding: 10px;
