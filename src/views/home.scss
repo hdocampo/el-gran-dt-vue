@@ -1,5 +1,7 @@
 @import "../assets/scss/styles.scss";
 
+$height-container: 230px;
+
 .home {
   margin: 40px 0; 
 
@@ -9,10 +11,29 @@
     flex-direction: column;
   }
 
+  &__team {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: $height-container;
+    width: 24%;
+  }
+
+  &__player-text {
+    margin-top: 5%;
+    font-size: 31px;
+    width: 33%;
+    text-align: center;
+  }
+
   &__model {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    justify-content: space-around;
+    width: 38%;
+    margin: 0 8% 0 1%;
+    // padding: 0 10% 0 18%;
+    height: $height-container;
 
     &-input {
       background: $light-gray;
@@ -23,17 +44,33 @@
       border: none;
       outline: none;
       margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
+  &__display-data-model {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark-orange;
+    font-size: 24px;
+  }
+
   &__logo {
-    max-width: 200px;
+    // max-width: 200px;
+    width: 30%;
     text-align: center;
     margin-bottom: 80px;
 
     &-image {
-      width: 70%;
+      max-width: 35%;
     }
+  }
+
+  &__title {
+    font-size: 16px;
   }
 
   &__header {

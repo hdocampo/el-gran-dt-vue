@@ -1,5 +1,7 @@
 @import "../../assets/scss/styles.scss";
 
+$text-shadow-setting: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
 .player-list-item-data {
 
     &__container {
@@ -16,15 +18,16 @@
         color: $dark-orange;
     }
 
+    
+    &__button,
+    &__container {
+        color: $white;
+    }
+    
     &__title {
         display: flex;
         justify-content: space-between;
-    }
-
-    &__button,
-    &__title,
-    &__container {
-        color: $white;
+        color: $endava-gray;
     }
 
     &__add {
@@ -61,6 +64,10 @@
     &__pos-price {
         display: flex;
         justify-content: space-between;
+
+        & > * {
+            text-shadow: $text-shadow-setting;
+        }
     }
 
     &__info {
@@ -78,5 +85,6 @@
 
     &__name {
         font-size: 24px;
+        text-shadow: $text-shadow-setting;
     }
 }

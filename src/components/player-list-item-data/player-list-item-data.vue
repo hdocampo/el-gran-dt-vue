@@ -22,12 +22,13 @@
             {{ playerPositions }}
           </div>
           <div class="player-list-item-data__price">
-            {{ currentPlayer.price }}
+            $ {{ currentPlayer.price }}
           </div>
         </div>
         <div class="player-list-item-data__add">
           <button 
             class="player-list-item-data__button"
+            :title="isAffordable ? 'Agregar Jugador' : 'No tienes suficiente presupuesto'"
             :disabled="!isAffordable"
             :class="{ 'player-list-item-data__button--disabled': !isAffordable }"
             @click="addPlayerToList(currentPlayer)">

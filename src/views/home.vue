@@ -9,13 +9,13 @@
           />
         </div>
         <div class="home__model">
-          <label>Nombra a tu equipo</label>
+          <label class="home__title">Nombra a tu equipo</label>
           <input type="text" v-model="teamName"
             placeholder="Elige un nombre para tu equipo"
             class="home__model-input"
           />
 
-          <label>Ingresa tu presupuesto</label>
+          <label class="home__title">Ingresa tu presupuesto</label>
           <input type="number" v-model="teamBudget"
             placeholder="¿Cuánto quieres gastar?"
             class="home__model-input"
@@ -23,23 +23,27 @@
         </div>
         
         <div class="home__team">
-          <h4>Nombre Elegido</h4>
-          <span>{{ teamName }}</span>
+          <div class="home__team-group-container">
+            <h4 class="home__title">Nombre Elegido</h4>
+            <span class="home__display-data-model">{{ teamName ? teamName : 'Equipo sin nombre' }}</span>
+          </div>
 
-          <h4>Presupuesto</h4>
-          <span>{{ teamBudget }}</span>
+          <div class="home__team-group-container">
+            <h4 class="home__title">Presupuesto</h4>
+            <span class="home__display-data-model">{{ teamBudget ? `$ ${teamBudget}` : 'Necesitas presupuesto' }}</span>
+          </div>
         </div>
       </div>
       <div class="home__player-selection">
         <player-list :playersDraft="playersDraft"
                      @playerSelected="playerSelected" />
-  
-        <slot v-if="!currentPlayer">
-          <p>Selecciona un jugador para ver su ficha</p>
-        </slot>
-  
-        <slot v-if="currentPlayer">
-          <player-item-data :player="currentPlayer"
+        
+        <slot>
+          <p v-if="!currentPlayer"
+            class="home__player-text">
+            Selecciona un jugador para ver su ficha</p>
+          <player-item-data v-if="currentPlayer"
+                            :player="currentPlayer"
                             :key="currentPlayer.id"
                             :spent="moneySpent"
                             :budget="teamBudget"

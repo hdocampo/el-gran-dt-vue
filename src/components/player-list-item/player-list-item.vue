@@ -13,11 +13,11 @@
           <img :src="playerImg" :alt="currentPlayer.name"
             class="player-list-item__image" />
         </div>        
-        <div class="player-list-item__name col-lg-6">
+        <div class="player-list-item__name col-lg-5">
           {{ currentPlayer.name }}
         </div>
-        <div class="player-list-item__price  col-lg-2">
-          {{ currentPlayer.price }}
+        <div class="player-list-item__price  col-lg-3">
+          $ {{ currentPlayer.price }}
         </div>
       </div>
       </div>
